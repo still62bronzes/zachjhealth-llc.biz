@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!--
+  <!--ss
     One-file insurance broker template for Cloudflare Pages
     Replace tokens like ZACHJHEALTH LLC, Zachary@zachjhealth-llc.biz, etc. before deploy.
   -->
@@ -486,16 +486,80 @@
             <textarea id="message" name="message" rows="5" placeholder="Tell us about your needs…"></textarea>
           </div>
 
-          <!-- Express Consent Authorization (required) -->
-          <div class="legal-sections" style="margin-top:16px">
-            <h4>Express Consent Authorization Note</h4>
-            <div id="express-consent-note" class="consent-card">
-              By submitting this form, you expressly consent to receive information via SMS/Phone, SMS, or SMS/Email from our team of experts. Your consent allows us to provide you with the best options tailored to your needs, ensuring a seamless and efficient experience. By entering your cell number and clicking "SUBMIT" you agree to receive recurring automated promotional and marketing text messages and emails from us. Text STOP to stop receiving text messages. Msg&Data Rates May Apply.
-            </div>
-            <div class="consent-line">
-            <input type="checkbox" id="consent" name="consent" required aria-describedby="express-consent-note">
-            <label for="consent"><b>I Consent to Express Consent Authorization Note, Privacy Policy, and Terms & Conditions</b></label>
-            </div>
+          <!-- Express Consent Authorization -->
+<div class="legal-sections" style="margin-top:16px">
+  <h4>Express Consent Authorization Note</h4>
+  <div id="express-consent-note" class="consent-card">
+    <p>
+      By submitting this form, you acknowledge that ZACHJHEALTH LLC may contact you
+      using the phone number and email address you provide.
+    </p>
+    <p>
+      <strong>Transactional &amp; informational messages:</strong> With your consent, we may send
+      SMS and phone messages related to quotes, applications, enrollment, and policy service.
+    </p>
+    <p>
+      <strong>Marketing messages:</strong> With separate consent below, we may send promotional
+      SMS and email about products, services, and offers from ZACHJHEALTH LLC.
+    </p>
+    <p>
+      <strong>Message frequency varies.</strong> Message and data rates may apply.
+      Text <strong>STOP</strong> to stop receiving text messages.
+      Text <strong>HELP</strong> for help or contact us at
+      <a href="tel:(585) 353-3315">(585) 353-3315</a> or
+      <a href="mailto:Zachary@zachjhealth-llc.biz">Zachary@zachjhealth-llc.biz</a>.
+    </p>
+  </div>
+
+  <!-- Separate opt-in checkboxes -->
+  <div class="consent-line">
+    <input
+      type="checkbox"
+      id="consent-transactional"
+      name="consent_transactional"
+      required
+      aria-describedby="express-consent-note"
+    >
+    <label for="consent-transactional">
+      <strong>
+        I consent to receive informational and transactional calls and text messages
+        about my quotes, applications, and policies from ZACHJHEALTH LLC.
+      </strong>
+    </label>
+  </div>
+
+  <div class="consent-line">
+    <input
+      type="checkbox"
+      id="consent-marketing"
+      name="consent_marketing"
+      required
+      aria-describedby="express-consent-note"
+    >
+    <label for="consent-marketing">
+      <strong>
+        I consent to receive marketing and promotional text messages and emails
+        from ZACHJHEALTH LLC.
+      </strong>
+    </label>
+  </div>
+
+  <!-- Legal acceptance -->
+  <div class="consent-line">
+    <input
+      type="checkbox"
+      id="consent-terms"
+      name="consent_terms"
+      required
+      aria-describedby="privacy-policy-copy terms-conditions-copy"
+    >
+    <label for="consent-terms">
+      <strong>
+        I acknowledge that I have read and agree to the Express Consent Authorization Note,
+        Privacy Policy, and Terms &amp; Conditions.
+      </strong>
+    </label>
+  </div>
 
             <!-- Privacy Policy dropdown -->
             <details class="disclosure" id="privacy-policy">
